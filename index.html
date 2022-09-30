@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <!-- favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/map-favicon.png">
+  <title>Frontend Mentor | IP Address Tracker</title>
+<!-- leaflet js css cdn -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.1/dist/leaflet.css"
+  integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+  crossorigin=""/>
+  <!-- leaflet js javascript cdn -->
+  <script src="https://unpkg.com/leaflet@1.9.1/dist/leaflet.js"
+  integrity="sha256-NDI0K41gVbWqfkkaHj15IzU7PtMoelkzyKp8TOaFQ3s="
+  crossorigin="" ></script>  
+  
+
+  <!-- main css -->
+<link rel="stylesheet" href="./css/style.css">
+
+  <!-- bootstrap icons cdn -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">  
+  
+</head>
+<body>
+  <div class="load-animation-background">
+    <div class="bars-10"></div>
+  </div>
+<header class="header">
+  <h1>IP Address Tracker</h1>
+<form action="">
+  <input type="text" name="" id="ip-address-input" placeholder="Search for any IP address or domain">
+  <button type="submit"><img src="./images/icon-arrow.svg" alt="icon-arrow" title="Submit button"></button>
+</form>
+<div class="client-details" role="Client details">
+  <div class="client-detail">
+    <h2>
+      IP Address
+    </h2>
+    <p>-</p>
+  </div >
+  <div class="client-detail" >
+    <h2>
+      Location
+    </h2>
+    <p>-</p>
+  </div>
+  <div class="client-detail timezone">
+    <h2>
+      Timezone
+    </h2>
+    <p> -<!-- add offset value dynamically using the API --></p>
+    
+  </div>
+  <div class="client-detail">
+  <h2>
+    ISP
+  </h2>
+  <p>-</p>
+</div>
+<div class="expand-btn-container">
+  <button title="Click to expand "role="expand button"class="expand-btn"><img src="./images/icon-arrow.svg" alt="arrow-top"></button>
+</div>
+
+</header>
+  <div id="map" role="map container"></div>
+  <div class="modal-background"></div>
+<div class="modal" role="error modal">
+  <span>X</span>
+  <h2>ERROR</h2>
+  <hr>
+ <p class="error-message"> </p>
+</div>
+<div class="my-attribution-container" role="attribution" >
+
+  <div class="my-attribution">
+    <div class="dialog-tail"></div>
+   <span> Challenge by:</span> <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. <br>
+   <span> Coded by:</span> <a href="https://www.frontendmentor.io/profile/joshuaAj003">Joshua Aj</a>.
+   <div class="icons">
+     <span> Links:</span>
+    <a href="https://twitter.com/JAjorgbor"><i class="bi bi-twitter"></i></a>
+    <a href="https://github.com/joshuaAj003"><i class="bi bi-github"></i></a>
+    <a href="https://www.linkedin.com/in/joshua-ajorgbor-b0bba6227/"><i class="bi bi-linkedin"></i></a>
+  </div>
+  </div>
+  <div class="profile-pic-container">
+    <img src="./images/selfie.jpg" alt="profile photo" class="profile-picture">
+  </div>
+</div>
+<script>
+    window.addEventListener("load",()=>{
+      setTimeout(()=>{
+        document.querySelector(".load-animation-background").classList.add("load-animation-background-removed")
+        
+      },3000);
+      
+    })
+  </script>
+
+        <script src="./app.js"></script>
+
+</body>
+</html>

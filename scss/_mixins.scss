@@ -1,0 +1,10 @@
+@mixin screenWidth($deviceWidthParameter:600px){
+    @media screen and (min-width:$deviceWidthParameter){
+        @content;
+    }
+}
+@mixin screenHeight($deviceHeightParameter:780px){
+    @media screen and (min-height:$deviceHeightParameter){
+        @content;
+    }
+}

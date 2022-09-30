@@ -1,0 +1,102 @@
+@use "mixins" as *;
+
+form{
+    @include screenWidth(750px){
+        width:50%;
+    }
+}
+.client-details{
+
+    @include screenWidth(){
+        width:50%;
+    }
+    @include screenHeight(700px){
+
+        height:50vh;
+    }
+    @include screenHeight(800px){
+
+        height:45vh;
+    }
+    @include screenHeight(1000px){
+
+bottom:-30%;
+    }
+    @include screenWidth(){
+    left:0;
+
+    }
+    @include screenWidth(800px){
+     flex-direction: row;
+     height:auto;
+     width: 90%;
+     justify-content:space-evenly;
+     align-items: center;
+     
+    }
+    @include screenWidth(900px){
+    width:80%;
+    
+    }
+}
+.client-details-collapsed{
+    @include screenHeight(700px){
+
+        height:17vh;
+    }
+    
+    @include screenHeight(800px){
+
+        height:13vh;
+    }
+    
+}
+
+.client-detail{
+    @include screenWidth(800px){
+        border-left: 1px solid rgb(128, 128, 128,0.7);
+        height:3.5rem;
+        text-align: left;
+        padding-left: 3%;
+        
+    }
+}
+
+
+.client-detail:nth-of-type(4){
+    @include screenWidth(800px){
+        border-bottom:none;
+        padding-left: 3%;
+
+    }
+}
+.client-detail:nth-of-type(1){
+    @include screenWidth(800px){
+        padding:0;
+        border:none;
+    }
+}
+.expand-btn-container{
+    @include screenWidth(800px){
+
+        display: none;
+    }
+}
+.modal{
+    @include screenWidth(450px){
+
+        width:50vw;
+    }
+    @include screenWidth(650px){
+
+        width:35vw;
+    }
+    @include screenWidth(800px){
+
+        width:30vw;
+    }
+    @include screenWidth(1000px){
+
+        width:25vw;
+    }
+}
