@@ -1,109 +1,107 @@
-# Frontend Mentor - IP address tracker
+# Frontend Mentor - IP address tracker solution
 
-![Design preview for the IP address tracker coding challenge](./design/desktop-preview.jpg)
+This is a solution to the [IP address tracker challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/ip-address-tracker-I8-0yYAH0). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-## Welcome! 👋
+## Table of contents
 
-Thanks for checking out this front-end coding challenge.
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
 
-**To do this challenge, you need a basic understanding of HTML, CSS and JavaScript.**
 
-## The challenge
 
-Your challenge is to build out this IP Address Tracker app and get it looking as close to the design as possible. To get the IP Address locations, you'll be using the [IP Geolocation API by IPify](https://geo.ipify.org/). To generate the map, we recommend using [LeafletJS](https://leafletjs.com/).
+## Overview
+This was a step up for me compared to my previous projects because I had to make use of 2 external APIs; the opensource leaflet Api which allowed me to easily generate the map and the IpWhois.io Api which allowed me to retrieve data concerning a users Ip information, including their network provider, timezone and location. I made use of javascript ES6 syntactic object oriented programming properties which gave me a good understandin of how classes and objects work, I also made use of the fetch API to retrieve data from the Ipwhois Api.
 
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
+### The challenge
 
-Your users should be able to:
+Users should be able to:
 
 - View the optimal layout for each page depending on their device's screen size
 - See hover states for all interactive elements on the page
 - See their own IP address on the map on the initial page load
 - Search for any IP addresses or domains and see the key information and location
 
----
+### Screenshot
 
-⚠️ **IMPORTANT** ⚠️: To use the IP Geolocation API by IPify, you'll need to sign up for a free account. You won't need to add any cards details to do this and it's a very quick process. This will generate an API Key for you. Usually, you would be able to restrict your API Key to a specific URL (your own domain). This makes sure that other people can't use your API Key on their own websites. IPify doesn't have this feature, but because you aren't adding your card details, this isn't an issue. **So be sure to only sign up for the free account and DO NOT enter any card details**.
+![](./screenshot.png)
 
-For the mapping API, we recommend using [LeafletJS](https://leafletjs.com/). It's free to use and doesn't require an API Key. If you decide to use another API, like Google Maps or Mapbox, be sure to secure your API Key. Here are guides for both Google Maps and Mapbox, be sure to read through them thoroughly:
 
-- [API Key best practices from Google Developers](https://developers.google.com/maps/api-key-best-practices)
-- [How to use Mapbox securely](https://docs.mapbox.com/help/troubleshooting/how-to-use-mapbox-securely/)
+### Links
 
-Exposing your API Key publicly can lead to other people using it to make requests for their own application if the proper precautions aren't in place. Please be sure you read the guides thoroughly and follow their recommendations.
+- Solution URL: [My solution](https://your-solution-url.com)
+- Live Site URL: [The live site](https://joshuaaj003.github.io/Frontend-mentor-ip-geolocator-api-challenge/)
 
-**We don't take any responsibility if you expose your API Key while completing the challenge and have not secured it.**
+## My process
+- I first built the basic structure with Html trying to make it as accesibility friendly as I could
+- I then used SASS to style the site with different breakpoints for responsiveness
+- I used plain vanilla javascript for the basic html DOM manipulation and used the leadlet and ipwhois api for the map and ip information retrieval
+### Built with
 
----
+- Semantic HTML5 markup
+- CSS custom properties
+- SASS
+- Flexbox
+- CSS Grid
+- Mobile-first workflow
+- Vanilla Javascript
+- fetch Api
 
-Want some support on the challenge? [Join our Slack community](https://www.frontendmentor.io/slack) and ask questions in the **#help** channel.
 
-## Where to find everything
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design. 
+### What I learned
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`. 
+I learned how to use the fetch api and promises to retrieve and use data from a given url
 
-If you would like the design files (we provide Sketch & Figma versions) to inspect the design in more detail, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
+```js
+ async getIpInfo(){
+            let responseData;
 
-You will find all the required assets in the `/images` folder. The assets are already optimized.
+            if(this.ip==undefined){
+      
+  //        
+                const ipInfo=await fetch(`https://ipwho.is`);
+             responseData=ipInfo.json();
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
+                return responseData;
+            }
+            const ipInfo=await fetch(`https://ipwho.is/${this.ip}`);
+             responseData=ipInfo.json();
+            return responseData;
+      
+        }
 
-## Building your project
+```
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+### Continued development
 
-## Deploying your project
+I would like to practice and develope more on how to fetch data from an API either using fetch or XMLHTTP requests, and to also get used to writing javascript Asynchronously
 
-As mentioned above, there are many ways to host your project for free. Our recommend hosts are:
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+### Useful resources
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://medium.com/frontend-mentor/frontend-mentor-trusted-hosting-providers-bf000dfebe).
+- [leaflet.js](https://leafletjs.com) - This is the website that provided the api that was used to generate the interactive map, their documentation was easy to understand and well concise.
+- [IPWHOIS](https://ipwhois.io) - I used the api from this website to retrieve the ip address info because although the original api suggested by frontend mentor ([ipify](https://geo.ipify.org))was easy to use and understand, it had a smaller window of limited requests for their free plan and I found my self needing more in other to properly test the site, and that's when i found IPWHOIS the number of requests for their free plan was 10,000 unlike the smaller 1000 requests offered by the ipify API, also note that IPWHOIS does not require an API key for their free plan but ipify does. 
 
-## Create a custom `README.md`
+## Author
 
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
+- Website - [my linkedin](https://www.linkedin.com/in/joshua-ajorgbor-b0bba6227/)
+- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/joshuaAj003)
+- Twitter - [@yourusername](https://www.twitter.com/joshuaAj003)
 
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
 
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
 
-## Submitting your solution
+## Acknowledgments
 
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://medium.com/frontend-mentor/a-complete-guide-to-submitting-solutions-on-frontend-mentor-ac6384162248) for tips on how to do this.
+This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
 
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
-
-## Sharing your solution
-
-There are multiple places you can share your solution:
-
-1. Share your solution page in the **#finished-projects** channel of the [Slack community](https://www.frontendmentor.io/slack). 
-2. Tweet [@frontendmentor](https://twitter.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in the tweet. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on other social channels like LinkedIn.
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
-
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback. 
-
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
-
-## Got feedback for us?
-
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
-
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
-
-**Have fun building!** 🚀
+**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
