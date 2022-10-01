@@ -28,12 +28,12 @@ let modalBackground=document.querySelector(".modal-background");
             if(this.ip==undefined){
       
   //        
-                const ipInfo=await fetch(`http://ipwho.is`);
+                const ipInfo=await fetch(`https://ipwho.is`);
              responseData=ipInfo.json();
 
                 return responseData;
             }
-            const ipInfo=await fetch(` http://ipwho.is/${this.ip}`);
+            const ipInfo=await fetch(`https://ipwho.is/${this.ip}`);
              responseData=ipInfo.json();
             return responseData;
       
